@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>  
+struct library
+{
+    int SrNo;
+    char Type[20];
+    int Count;
+};
+void main()
+{
+    int i,j,temp; struct library s;
+    for(i=0;i<5;i++)
+    {
+        printf("\nEnter the Sr. No.: ");
+        scanf("%d",&s[i].SrNo);
+        
+        printf("\nEnter the Type of Book(Books, E-Journals, Magazines, E-Books): ");
+        scanf("%s", s[i].Type);
+        
+        printf("\nEnter the Count of the Type of Book: ");
+        scanf("%d",&s[i].Count);
+    }
+    for(i=0;i<5;i++)
+    {
+        for(j=i+1;j<5;j++)
+        {
+            if(s[i].Count<s[j].Count)
+            {
+                temp=s[i].Count;
+                s[i].Count=s[j].Count; 
+                s[j].Count=temp;
+                printf("%d",temp);
+            }
+        }
+    }
+}
